@@ -51,23 +51,21 @@
 </dependencies>
     <build>
     <plugins>
-    <plugin>
-        <groupId>com.spotify</groupId>
-        <artifactId>dockerfile-maven-plugin</artifactId>
-        <version>1.4.13</version>
-        <executions>
-            <execution>
-                <id>default</id>
-                <goals>
-                    <goal>build</goal>
-                </goals>
-            </execution>
-        </executions>
-        <configuration>
-            <repository>http://docker.io/kkapelon/docker-maven-comparison</repository>
-            <tag>${project.version}</tag>
-        </configuration>
-    </plugin>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>repackage</goal>
+                    </goals>
+                    <configuration>
+                        <mainClass>com.stackify.Application</mainClass>
+                        <outputDirectory>${project.basedir}/docker</outputDirectory>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
     </plugins>
     </build>
 </project>
