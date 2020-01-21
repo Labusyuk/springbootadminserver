@@ -60,7 +60,7 @@
                         <goal>repackage</goal>
                     </goals>
                     <configuration>
-                        <mainClass>com.stackify.Application</mainClass>
+                        <mainClass>com.labus.springbootadminserver.SpringBootAdminServerApplication</mainClass>
                         <outputDirectory>${project.basedir}/docker</outputDirectory>
                     </configuration>
                 </execution>
